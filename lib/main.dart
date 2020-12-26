@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
       title: 'Álcool ou Gasolina',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.deepPurple,
       ),
     );
   }
