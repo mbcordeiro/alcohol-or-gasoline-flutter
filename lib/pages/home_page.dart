@@ -28,21 +28,27 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
-      body: ListView(
-        children: [
-          Logo(),
-          _completed
-              ? Success(
-                  result: _resultText,
-                  reset: reset,
-                )
-              : SubmitForm(
-                  alcCtrl: _alcCtrl,
-                  gasCtrl: _gasCtrl,
-                  busy: _busy,
-                  submitFunc: calculate,
-                ),
-        ],
+      body: AnimatedContainer(
+        duration: Duration(
+          milliseconds: 1200,
+        ),
+        color: _color,
+        child: ListView(
+          children: [
+            Logo(),
+            _completed
+                ? Success(
+                    result: _resultText,
+                    reset: reset,
+                  )
+                : SubmitForm(
+                    alcCtrl: _alcCtrl,
+                    gasCtrl: _gasCtrl,
+                    busy: _busy,
+                    submitFunc: calculate,
+                  ),
+          ],
+        ),
       ),
     );
   }
